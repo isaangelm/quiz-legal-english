@@ -1,3 +1,5 @@
+Sí. Copia TODO esto y pégalo en GitHub dentro de index.html, borrando lo anterior:
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -11,57 +13,164 @@ h1{margin:0 0 8px;font-size:26px}
 .meta{color:#666;margin-bottom:18px}
 .q{font-size:20px;font-weight:700;margin:20px 0;line-height:1.35}
 .opt{display:block;width:100%;text-align:left;padding:14px;margin:10px 0;border:1px solid #ddd;border-radius:12px;background:#fafafa;font-size:17px}
-.opt:active{transform:scale(.99)}
 .correct{background:#d8f5df!important;border-color:#2e9b46!important}
 .wrong{background:#ffe1e1!important;border-color:#d33!important}
 .feedback{font-weight:700;margin:14px 0;min-height:24px}
 .btn{border:0;border-radius:12px;padding:13px 18px;background:#111;color:#fff;font-weight:700;font-size:16px;margin:6px 6px 0 0}
 .btn2{background:#e8e8e8;color:#111}
 .result{background:#f0f0f2;border-radius:14px;padding:18px;margin-top:18px;line-height:1.5}
+.badge{display:inline-block;background:#eef;border-radius:999px;padding:5px 10px;font-size:13px;margin-top:5px}
 </style>
 </head>
 <body>
 <div class="box">
 <h1>Quiz Legal English</h1>
-<div class="meta" id="meta">50 preguntas · opción múltiple · privado en tu navegador</div>
+<div class="badge">Preguntas y respuestas mezcladas automáticamente</div>
+<div class="meta" id="meta">50 preguntas · opción múltiple</div>
 <div id="app"></div>
 </div>
 <script>
-const questions = [{"q": "1. Monitor the activities of companies to ensure that they comply with the law", "o": ["Creditor", "Board of directors", "Legal person", "Regulators"], "a": 3}, {"q": "2. One characteristic of Legal English is", "o": ["Use of terminology", "Lack of punctuation", "Special meanings", "All the options are correct"], "a": 3}, {"q": "3. She ______ comfortable in the company, so she left", "o": ["Didn't be", "Didn't was", "Weren't", "Wasn't"], "a": 3}, {"q": "4. Choose the correct question", "o": ["Do she have any working experience?", "Have she any working experience?", "Does she has any working experience?", "Does she have any working experience?"], "a": 3}, {"q": "5. “I don’t believe you!” She said", "o": ["She said I don’t believe you", "She said she didn’t believe you", "She said she won’t believe me", "She said she didn’t believe me"], "a": 3}, {"q": "6. A divorce is part of", "o": ["Criminal law", "Tort law", "Company law", "Civil law"], "a": 3}, {"q": "7. A legal official who accuses someone of committing a crime, especially in a law court", "o": ["Legal person", "Plaintiff", "Defendant", "Prosecutor"], "a": 3}, {"q": "8. This is where cases involving a limited amount of money are handled", "o": ["Crown court", "Juvenile court", "Lower court", "Small-claims court"], "a": 3}, {"q": "9. Person who has specialized knowledge of a particular subject who is called to testify in court", "o": ["Advocate", "Claimant", "Appellant", "Expert witness"], "a": 3}, {"q": "10. Clause concerning the treating of information as private and not for distribution beyond specifically identified individuals or organisations", "o": ["Injunctions", "Termination", "Severability", "Confidentiality"], "a": 3}, {"q": "11. Occurs where the contractual obligations of one of the parties are performed by a third party", "o": ["Substantial performance", "Voluntary acceptance of partial performance", "Breach of contract", "Vicarious performance"], "a": 3}, {"q": "12. Sum fixed in advance by the parties as the amount to be paid in the event of a breach", "o": ["Unliquidated damages", "Aggravated damages", "Special damages", "Liquidated damages"], "a": 3}, {"q": "13. She is the girl ____ committed the crime", "o": ["Which", "Whose", "Why", "Who"], "a": 3}, {"q": "14. I ____ you anything, it's a secret", "o": ["Don't told", "Didn't told", "Tell not", "Didn't tell"], "a": 3}, {"q": "15. To enter another person’s area; hurting people/damaging property through force", "o": ["Assault", "Forgery", "Hit and run", "Trespassing"], "a": 3}, {"q": "16. “I am not lying!” She said", "o": ["She said she didn’t lie", "She said I didn’t lie", "She said I wasn’t lying", "She said she wasn’t lying"], "a": 3}, {"q": "17. To illegally copy documents, money, etc. to trick people", "o": ["Bribery", "Burglary", "Assault", "Forgery"], "a": 3}, {"q": "18. The passive form of “They are signing the documents” is", "o": ["The documents were being signed", "The documents will be signed", "The documents is being signed", "The documents are being signed"], "a": 3}, {"q": "19. Officer of the court whose duties include keeping order and assisting the judge and jurors", "o": ["Legal person", "Advocate", "Appellant", "Bailiff"], "a": 3}, {"q": "20. This is where serious criminal cases are heard by a judge and a jury in the UK", "o": ["Crown court", "Magistrates court", "Lower court", "High court"], "a": 0}, {"q": "21. Employee who takes records, files and papers and issues processes", "o": ["Advocate", "Claimant", "Appellant", "Clerk"], "a": 3}, {"q": "22. The passive voice of “They give advice for free” is", "o": ["Advice they give for free", "Advice is being given for free", "Advice was given for free", "Advice is given for free"], "a": 3}, {"q": "23. Are damages the amount of which is fixed by the court", "o": ["Liquidated damages", "Aggravated damages", "Special damages", "Unliquidated damages"], "a": 3}, {"q": "24. “I will report this to the police!” He said that", "o": ["He said that I would report that to the police", "He said that he was going to report that to the police", "He said that he reported that to the police", "He said he would report that to the police"], "a": 3}, {"q": "25. Who says “I set the bail in 10,000$”", "o": ["Bailiff", "Defendant", "Witness", "Judge"], "a": 3}, {"q": "26. To give money or granting favors to influence somebody’s decisions or behaviour", "o": ["Assault", "Forgery", "Hit and run", "Bribery"], "a": 3}, {"q": "27. The passive voice of “They will steal your money” is", "o": ["Your money would be stolen", "Money they will steal from you", "Your money is going to be stolen", "Your money will be stolen"], "a": 3}, {"q": "28. To kill a famous person or a public figure", "o": ["Murder", "Homicide", "Manslaughter", "Assassination"], "a": 3}, {"q": "29. To steal large amounts of money that you are responsible for, often over a period of time", "o": ["Manslaughter", "Kidnapping", "Blackmail", "Embezzlement"], "a": 3}, {"q": "30. Invests money by buying shares in a company", "o": ["Creditor", "Board of directors", "Company director", "Shareholder"], "a": 3}, {"q": "31. Contractions (we're, hadn't, didn't) are used in", "o": ["Always", "Formal register", "American English", "Informal register"], "a": 3}, {"q": "32. To break into a house with the intention of stealing something", "o": ["Hit and run", "Shoplifting", "Murder", "Burglary"], "a": 3}, {"q": "33. Choose the correct question", "o": ["Did she had a good lawyer?", "Did she has a good lawyer?", "Was she have a good lawyer?", "Did she have a good lawyer?"], "a": 3}, {"q": "34. Marriage is part of", "o": ["Criminal law", "Tort law", "Company law", "Civil law"], "a": 3}, {"q": "35. Person who has been accused of something", "o": ["Legal person", "Plaintiff", "Bailiff", "Defendant"], "a": 3}, {"q": "36. This is where a person under the age of 18 would be tried", "o": ["Crown court", "Small-claims court", "Lower court", "Juvenile court"], "a": 3}, {"q": "37. “I will sue you!” He said", "o": ["He said that he would sue me", "He said he sued me", "He said he was going to sue me", "He said he is going to sue me"], "a": 0}, {"q": "38. The amount of money decided by the court as compensation for a tort or breach of contract", "o": ["Injunctions", "Termination", "Severability", "Damages"], "a": 3}, {"q": "39. In a contract, ‘employer’ and ‘Employee’ are examples of", "o": ["Subcontracting", "Territory", "Charges", "Parties"], "a": 3}, {"q": "40. Difference between criminal and tort law", "o": ["The parties involved", "The standard of proof", "The outcomes", "All the options are correct"], "a": 3}, {"q": "41. “I have been in court before” She said", "o": ["She said she have been in court before", "She said she has been in court before", "She said she had been in court before", "She said she was in court before"], "a": 2}, {"q": "42. Who says “I'll prove the defendant is guilty of the crime”", "o": ["Judge", "Defendant", "Witness", "Defendant attorney"], "a": 3}, {"q": "43. A party has performed their contractual obligations but there are some minor defects. In this case", "o": ["Voluntary acceptance of partial performance", "Vicarious performance", "Breach of contract", "Substantial performance"], "a": 3}, {"q": "44. To threaten to reveal somebody’s secrets if this person does not pay a lot of money", "o": ["Cybercrime", "Corruption", "Assault", "Blackmail"], "a": 3}, {"q": "45. To kill somebody by accident", "o": ["Murder", "Homicide", "Domestic violence", "Manslaughter"], "a": 3}, {"q": "46. _____ being the most annoying person I know, she is an excellent lawyer:", "o": ["However", "Although", "But", "Despite"], "a": 3}, {"q": "47. The reasonably prudent person is:", "o": ["Legal person in court who uses good judgement or common sense in handling practical matters", "Witness who uses good judgement or common sense in handling practical matters", "Member of the jury who uses good judgement or common sense in handling practical matters", "Hypothetical person who uses good judgement or common sense in handling practical matters"], "a": 3}, {"q": "48. The burden of proof in tort law is:", "o": ["100%", "50%", "75%", "Above 50%"], "a": 3}, {"q": "49. The passive voice of “They give advice for free” is:", "o": ["Advice they give for free", "Advice is being given for free", "Advice was given for free", "Advice is given for free"], "a": 3}, {"q": "50. The passive of “The police was investigating the case” is:", "o": ["The case is investigating", "The case was investigated", "The case is being investigated", "The case will be investigated"], "a": 2}];
-let current=0, score=0, chosen=Array(questions.length).fill(null), locked=false;
+const originalQuestions=[
+{q:"Monitor the activities of companies to ensure that they comply with the law",o:["Creditor","Board of directors","Legal person","Regulators"],a:"Regulators"},
+{q:"One characteristic of Legal English is",o:["Use of terminology","Lack of punctuation","Special meanings","All the options are correct"],a:"All the options are correct"},
+{q:"She ______ comfortable in the company, so she left",o:["Didn't be","Didn't was","Weren't","Wasn't"],a:"Wasn't"},
+{q:"Choose the correct question",o:["Do she have any working experience?","Have she any working experience?","Does she has any working experience?","Does she have any working experience?"],a:"Does she have any working experience?"},
+{q:"“I don’t believe you!” She said",o:["She said I don’t believe you","She said she didn’t believe you","She said she won’t believe me","She said she didn’t believe me"],a:"She said she didn’t believe me"},
+{q:"A divorce is part of",o:["Criminal law","Tort law","Company law","Civil law"],a:"Civil law"},
+{q:"A legal official who accuses someone of committing a crime, especially in a law court",o:["Legal person","Plaintiff","Defendant","Prosecutor"],a:"Prosecutor"},
+{q:"This is where cases involving a limited amount of money are handled",o:["Crown court","Juvenile court","Lower court","Small-claims court"],a:"Small-claims court"},
+{q:"Person who has specialized knowledge of a particular subject who is called to testify in court",o:["Advocate","Claimant","Appellant","Expert witness"],a:"Expert witness"},
+{q:"Clause concerning the treating of information as private and not for distribution beyond specifically identified individuals or organisations",o:["Injunctions","Termination","Severability","Confidentiality"],a:"Confidentiality"},
+{q:"Occurs where the contractual obligations of one of the parties are performed by a third party",o:["Substantial performance","Voluntary acceptance of partial performance","Breach of contract","Vicarious performance"],a:"Vicarious performance"},
+{q:"Sum fixed in advance by the parties as the amount to be paid in the event of a breach",o:["Unliquidated damages","Aggravated damages","Special damages","Liquidated damages"],a:"Liquidated damages"},
+{q:"She is the girl ____ committed the crime",o:["Which","Whose","Why","Who"],a:"Who"},
+{q:"I ____ you anything, it's a secret",o:["Don't told","Didn't told","Tell not","Didn't tell"],a:"Didn't tell"},
+{q:"To enter another person’s area; hurting people/damaging property through force",o:["Assault","Forgery","Hit and run","Trespassing"],a:"Trespassing"},
+{q:"“I am not lying!” She said",o:["She said she didn’t lie","She said I didn’t lie","She said I wasn’t lying","She said she wasn’t lying"],a:"She said she wasn’t lying"},
+{q:"To illegally copy documents, money, etc. to trick people",o:["Bribery","Burglary","Assault","Forgery"],a:"Forgery"},
+{q:"The passive form of “They are signing the documents” is",o:["The documents were being signed","The documents will be signed","The documents is being signed","The documents are being signed"],a:"The documents are being signed"},
+{q:"Officer of the court whose duties include keeping order and assisting the judge and jurors",o:["Legal person","Advocate","Appellant","Bailiff"],a:"Bailiff"},
+{q:"This is where serious criminal cases are heard by a judge and a jury in the UK",o:["Crown court","Magistrates court","Lower court","High court"],a:"Crown court"},
+{q:"Employee who takes records, files and papers and issues processes",o:["Advocate","Claimant","Appellant","Clerk"],a:"Clerk"},
+{q:"The passive voice of “They give advice for free” is",o:["Advice they give for free","Advice is being given for free","Advice was given for free","Advice is given for free"],a:"Advice is given for free"},
+{q:"Are damages the amount of which is fixed by the court",o:["Liquidated damages","Aggravated damages","Special damages","Unliquidated damages"],a:"Unliquidated damages"},
+{q:"“I will report this to the police!” He said that",o:["He said that I would report that to the police","He said that he was going to report that to the police","He said that he reported that to the police","He said he would report that to the police"],a:"He said he would report that to the police"},
+{q:"Who says “I set the bail in 10,000$”",o:["Bailiff","Defendant","Witness","Judge"],a:"Judge"},
+{q:"To give money or granting favors to influence somebody’s decisions or behaviour",o:["Assault","Forgery","Hit and run","Bribery"],a:"Bribery"},
+{q:"The passive voice of “They will steal your money” is",o:["Your money would be stolen","Money they will steal from you","Your money is going to be stolen","Your money will be stolen"],a:"Your money will be stolen"},
+{q:"To kill a famous person or a public figure",o:["Murder","Homicide","Manslaughter","Assassination"],a:"Assassination"},
+{q:"To steal large amounts of money that you are responsible for, often over a period of time",o:["Manslaughter","Kidnapping","Blackmail","Embezzlement"],a:"Embezzlement"},
+{q:"Invests money by buying shares in a company",o:["Creditor","Board of directors","Company director","Shareholder"],a:"Shareholder"},
+{q:"Contractions (we're, hadn't, didn't) are used in",o:["Always","Formal register","American English","Informal register"],a:"Informal register"},
+{q:"To break into a house with the intention of stealing something",o:["Hit and run","Shoplifting","Murder","Burglary"],a:"Burglary"},
+{q:"Choose the correct question",o:["Did she had a good lawyer?","Did she has a good lawyer?","Was she have a good lawyer?","Did she have a good lawyer?"],a:"Did she have a good lawyer?"},
+{q:"Marriage is part of",o:["Criminal law","Tort law","Company law","Civil law"],a:"Civil law"},
+{q:"Person who has been accused of something",o:["Legal person","Plaintiff","Bailiff","Defendant"],a:"Defendant"},
+{q:"This is where a person under the age of 18 would be tried",o:["Crown court","Small-claims court","Lower court","Juvenile court"],a:"Juvenile court"},
+{q:"“I will sue you!” He said",o:["He said that he would sue me","He said he sued me","He said he was going to sue me","He said he is going to sue me"],a:"He said that he would sue me"},
+{q:"The amount of money decided by the court as compensation for a tort or breach of contract",o:["Injunctions","Termination","Severability","Damages"],a:"Damages"},
+{q:"In a contract, ‘employer’ and ‘Employee’ are examples of",o:["Subcontracting","Territory","Charges","Parties"],a:"Parties"},
+{q:"Difference between criminal and tort law",o:["The parties involved","The standard of proof","The outcomes","All the options are correct"],a:"All the options are correct"},
+{q:"“I have been in court before” She said",o:["She said she have been in court before","She said she has been in court before","She said she had been in court before","She said she was in court before"],a:"She said she had been in court before"},
+{q:"Who says “I'll prove the defendant is guilty of the crime”",o:["Judge","Defendant","Witness","Defendant attorney"],a:"Defendant attorney"},
+{q:"A party has performed their contractual obligations but there are some minor defects. In this case",o:["Voluntary acceptance of partial performance","Vicarious performance","Breach of contract","Substantial performance"],a:"Substantial performance"},
+{q:"To threaten to reveal somebody’s secrets if this person does not pay a lot of money",o:["Cybercrime","Corruption","Assault","Blackmail"],a:"Blackmail"},
+{q:"To kill somebody by accident",o:["Murder","Homicide","Domestic violence","Manslaughter"],a:"Manslaughter"},
+{q:"_____ being the most annoying person I know, she is an excellent lawyer:",o:["However","Although","But","Despite"],a:"Despite"},
+{q:"The reasonably prudent person is:",o:["Legal person in court who uses good judgement or common sense in handling practical matters","Witness who uses good judgement or common sense in handling practical matters","Member of the jury who uses good judgement or common sense in handling practical matters","Hypothetical person who uses good judgement or common sense in handling practical matters"],a:"Hypothetical person who uses good judgement or common sense in handling practical matters"},
+{q:"The burden of proof in tort law is:",o:["100%","50%","75%","Above 50%"],a:"Above 50%"},
+{q:"The passive voice of “They give advice for free” is:",o:["Advice they give for free","Advice is being given for free","Advice was given for free","Advice is given for free"],a:"Advice is given for free"},
+{q:"The passive of “The police was investigating the case” is:",o:["The case is investigating","The case was investigated","The case is being investigated","The case will be investigated"],a:"The case is being investigated"}
+];
+let questions=[],current=0,score=0,chosen=[],locked=false;
+function rand(max){
+ const arr=new Uint32Array(1);
+ crypto.getRandomValues(arr);
+ return arr[0]%max;
+}
+function shuffle(array){
+ const copy=[...array];
+ for(let i=copy.length-1;i>0;i--){
+  const j=rand(i+1);
+  [copy[i],copy[j]]=[copy[j],copy[i]];
+ }
+ return copy;
+}
+function prepareQuiz(){
+ questions=shuffle(originalQuestions).map(q=>{
+  const mixed=shuffle(q.o);
+  return{q:q.q,o:mixed,a:mixed.indexOf(q.a),correctText:q.a};
+ });
+ current=0;
+ score=0;
+ chosen=Array(questions.length).fill(null);
+ locked=false;
+}
 function render(){
  locked=false;
  const q=questions[current];
- document.getElementById('meta').innerHTML=`Pregunta ${current+1} de ${questions.length} · Aciertos: ${score}`;
- let html=`<div class="q">${q.q}</div>`;
- q.o.forEach((op,i)=>html+=`<button class="opt" onclick="answer(${i})">${String.fromCharCode(65+i)}. ${op}</button>`);
- html+=`<div class="feedback" id="fb"></div><button class="btn" id="next" style="display:none" onclick="next()">Siguiente</button><button class="btn btn2" onclick="restart()">Reiniciar</button>`;
- document.getElementById('app').innerHTML=html;
+ document.getElementById("meta").innerHTML=`Pregunta ${current+1} de ${questions.length} · Aciertos: ${score}`;
+ let html=`<div class="q">${current+1}. ${q.q}</div>`;
+ q.o.forEach((op,i)=>{
+  html+=`<button class="opt" onclick="answer(${i})">${String.fromCharCode(65+i)}. ${op}</button>`;
+ });
+ html+=`<div class="feedback" id="fb"></div>
+ <button class="btn" id="next" style="display:none" onclick="next()">Siguiente</button>
+ <button class="btn btn2" onclick="restart()">Reiniciar mezclando</button>`;
+ document.getElementById("app").innerHTML=html;
 }
 function answer(i){
- if(locked)return; locked=true;
- const q=questions[current]; chosen[current]=i;
- const opts=document.querySelectorAll('.opt');
- opts[q.a].classList.add('correct');
- if(i===q.a){score++;document.getElementById('fb').textContent='✅ Correcto';}
- else{opts[i].classList.add('wrong');document.getElementById('fb').textContent='❌ Incorrecto. Correcta: '+q.o[q.a];}
- document.getElementById('meta').innerHTML=`Pregunta ${current+1} de ${questions.length} · Aciertos: ${score}`;
- document.getElementById('next').style.display='inline-block';
+ if(locked)return;
+ locked=true;
+ const q=questions[current];
+ chosen[current]=i;
+ const opts=document.querySelectorAll(".opt");
+ opts[q.a].classList.add("correct");
+ if(i===q.a){
+  score++;
+  document.getElementById("fb").textContent="✅ Correcto";
+ }else{
+  opts[i].classList.add("wrong");
+  document.getElementById("fb").textContent="❌ Incorrecto. Correcta: "+q.correctText;
+ }
+ document.getElementById("meta").innerHTML=`Pregunta ${current+1} de ${questions.length} · Aciertos: ${score}`;
+ document.getElementById("next").style.display="inline-block";
 }
-function next(){ if(current<questions.length-1){current++;render();} else finish(); }
+function next(){
+ if(current<questions.length-1){
+  current++;
+  render();
+ }else{
+  finish();
+ }
+}
 function finish(){
  const pct=Math.round(score/questions.length*100);
- document.getElementById('meta').innerHTML='Finalizado';
- document.getElementById('app').innerHTML=`<div class="result"><b>Resultado:</b><br>${score} de ${questions.length} correctas<br><b>${pct}%</b></div><button class="btn" onclick="restart()">Repetir</button><button class="btn btn2" onclick="mistakes()">Ver fallos</button>`;
+ let msg=pct>=90?"Excelente. Lo tienes muy dominado.":pct>=75?"Muy bien. Repasa solo los fallos.":pct>=60?"Vas bien, pero conviene repetir el test.":"Necesitas repetirlo con calma.";
+ document.getElementById("meta").innerHTML="Finalizado";
+ document.getElementById("app").innerHTML=
+ `<div class="result"><b>Resultado:</b><br>${score} de ${questions.length} correctas<br><b>${pct}%</b><br><br>${msg}</div>
+ <button class="btn" onclick="restart()">Repetir mezclando todo</button>
+ <button class="btn btn2" onclick="mistakes()">Ver fallos</button>`;
 }
 function mistakes(){
- let html='<h2>Fallos</h2>'; let n=0;
- questions.forEach((q,i)=>{ if(chosen[i]!==q.a){n++; html+=`<div class="result"><b>${q.q}</b><br>Tu respuesta: ${chosen[i]===null?'No respondida':q.o[chosen[i]]}<br>Correcta: <b>${q.o[q.a]}</b></div>`; } });
- if(n===0) html+='<div class="result">No tuviste fallos 🎉</div>';
- html+='<button class="btn" onclick="restart()">Repetir</button>';
- document.getElementById('app').innerHTML=html;
+ let html="<h2>Fallos</h2>";
+ let n=0;
+ questions.forEach((q,i)=>{
+  if(chosen[i]!==q.a){
+   n++;
+   html+=`<div class="result"><b>${i+1}. ${q.q}</b><br>Tu respuesta: ${chosen[i]===null?"No respondida":q.o[chosen[i]]}<br>Correcta: <b>${q.correctText}</b></div>`;
+  }
+ });
+ if(n===0)html+='<div class="result">No tuviste fallos 🎉</div>';
+ html+='<button class="btn" onclick="restart()">Repetir mezclando todo</button>';
+ document.getElementById("app").innerHTML=html;
 }
-function restart(){current=0;score=0;chosen=Array(questions.length).fill(null);render();}
+function restart(){
+ prepareQuiz();
+ render();
+}
+prepareQuiz();
 render();
 </script>
 </body>
